@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import path from 'path';
 
 // Get the path to the student records JSON file
-const filePath = path.join(process.cwd(), 'lib', 'students.json');
+const filePath = path.join(process.cwd(), 'public', 'students.json');
 
 export default async function handler(
   req: NextApiRequest,
