@@ -18,18 +18,20 @@ export default async function handler(
 
     switch (method) {
       // Get all students
-      case 'GET':
+      case 'GET': {
         res.status(200).json(students);
         break;
+      }
 
       // Add a new student
-      case 'POST':
+      case 'POST': {
         const newStudent: IStudent = req.body;
         newStudent.id = (students.length + 1).toString();
         students.push(newStudent);
         await fs.writeFile(filePath, JSON.stringify(students, null, 2));
         res.status(201).json(newStudent);
         break;
+      }
 
       default:
         res.setHeader('Allow', ['GET', 'POST']);

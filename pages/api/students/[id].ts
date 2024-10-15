@@ -25,27 +25,31 @@ export default async function handler(
 
     switch (method) {
       // Get a student by ID
-      case 'GET':
+      case 'GET': {
         res.status(200).json(students[studentIndex]);
         break;
+      }
 
       // Update a student by ID
-      case 'PUT':
+      case 'PUT': {
         students[studentIndex] = { ...students[studentIndex], ...req.body };
         await fs.writeFile(filePath, JSON.stringify(students, null, 2));
         res.status(200).json({ message: 'Student updated successfully' });
         break;
+      }
 
       // Delete a student by ID
-      case 'DELETE':
+      case 'DELETE': {
         students.splice(studentIndex, 1);
         await fs.writeFile(filePath, JSON.stringify(students, null, 2));
         res.status(200).json({ message: 'Student deleted successfully' });
         break;
+      }
 
-      default:
+      default: {
         res.setHeader('Allow', ['GET', 'PUT', 'DELETE']);
         res.status(405).end(`Method ${method} Not Allowed`);
+      }
     }
   } catch (error) {
     res.status(500).json({ message: 'Failed to handle request' });

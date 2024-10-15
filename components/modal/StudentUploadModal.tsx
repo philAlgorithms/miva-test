@@ -177,7 +177,7 @@ const StudentUploadModal: React.FC<IStudentUploadModal> = ({
                   )}
                 </FormControl>
                 <FormControl mt={4}>
-                  <FormLabel>Last name</FormLabel>
+                  <FormLabel>Date of Birth</FormLabel>
                   <Input
                     placeholder="Select Date and Time"
                     type="datetime-local"
