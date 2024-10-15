@@ -52,13 +52,16 @@ const StudentUploadModal: React.FC<IStudentUploadModal> = ({
     setIsUploading(true);
 
     try {
-      const response = await fetch(`/api/students`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_HOST}/api/students`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        }
+      );
 
       if (response.ok) {
         alert(`Student created`);
@@ -77,13 +80,16 @@ const StudentUploadModal: React.FC<IStudentUploadModal> = ({
     setIsUploading(true);
 
     try {
-      const response = await fetch(`/api/students/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_HOST}/api/students/${id}`,
+        {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        }
+      );
 
       if (response.ok) {
         alert(`Student details updated.`);
