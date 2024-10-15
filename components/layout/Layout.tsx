@@ -15,7 +15,7 @@ const Layout: React.FC<ILayout> = ({ title, children }) => {
           <title>{title}</title>
         </Head>
       )}
-      <Container maxW="7xl" className="px-5">
+      <Container maxW="7xl" className="px-5 md:px-10">
         <Header />
         {children}
       </Container>
