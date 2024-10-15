@@ -1,15 +1,12 @@
-import { Link } from '@chakra-ui/next-js';
+import Link from 'next/link';
 
 export interface IHeader extends React.ComponentPropsWithoutRef<'header'> {}
 
 const Header: React.FC<IHeader> = ({ className, children, ...headerProps }) => {
   return (
-    <header
-      className={`container-wrapper bg-gray-ef1 ${className}`}
-      {...headerProps}
-    >
+    <header className={`bg-white ${className}`} {...headerProps}>
       <nav
-        className="mx-auto flex items-center justify-between pt-12 lg:pt-24 pb-2 md:py-6"
+        className="mx-auto flex items-center justify-between pt-12 lg:pt-16 py-3 pb-2 md:py-6 border-b-[2px] border-gray-400"
         aria-label="Global"
       >
         <Link href="/" className="flex flex-row items-center gap-x-1 lg:flex-1">
@@ -20,7 +17,11 @@ const Header: React.FC<IHeader> = ({ className, children, ...headerProps }) => {
             MIVA UNIVERSITY
           </span>
         </Link>
-        {children}
+        <div className="hidden lg:flex lg:gap-x-scale-desktop-39 items-center">
+          <Link href="/login" className="">
+            Login
+          </Link>
+        </div>
       </nav>
     </header>
   );
