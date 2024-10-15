@@ -92,6 +92,9 @@ const StudentUploadModal: React.FC<IStudentUploadModal> = ({
       );
 
       if (response.ok) {
+        console.log(response.body);
+        console.log(response);
+        console.log(response.text());
         alert(`Student details updated.`);
         router.reload();
       } else {
