@@ -1,4 +1,4 @@
-This is the Test Assment for Mira University using Next.js Page router. The project uses local file to simulate the database.
+This is the Test Assment for Miva University using Next.js Page router. The project uses local file to simulate the database.
 
 ## Getting Started
 
@@ -31,30 +31,31 @@ The file `page.d.ts` describes a type which extends the default NextPage and use
 
 ##### Code for page.d.ts
 
-    ```typescript
-        import { NextPage } from 'next';
-        import { ComponentType, ReactElement, ReactNode } from 'react';
+```typescript
+import { NextPage } from 'next';
+import { ComponentType, ReactElement, ReactNode } from 'react';
 
-        export type NextPageWithLayout<P = {}> = NextPage<P> & {
-        getLayout?: (_page: ReactElement) => ReactNode;
-        layout?: ComponentType;
-        };
-    ```
+export type NextPageWithLayout<P = {}> = NextPage<P> & {
+  getLayout?: (_page: ReactElement) => ReactNode;
+  layout?: ComponentType;
+};
+```
 
 ### 2. `components/`
 
 The `components/` folder contains reusable UI components used throughout the app. Components are modular, allowing for code reusability and clean separation of concerns. These may include cards, forms, layout, navigation, modal and sections.
 
 - **Components Folder Structure**:
-  ```bash
-    components/
-        ├── card
-        ├── form
-        ├── modal
-        ├── navigation
-        ├── section
-        └── templates
-  ```
+
+```bash
+components/
+    ├── card
+    ├── form
+    ├── modal
+    ├── navigation
+    ├── section
+    └── templates
+```
 
 #### BaseTemplate Component
 
@@ -62,38 +63,40 @@ The `BaseTemplate` component provides a base structure that can be extended by o
 
 ##### Code for the template
 
-    ```typescript
-        export interface IBaseTemplate extends React.ComponentPropsWithoutRef<'div'> {}
+```typescript
+export interface IBaseTemplate extends React.ComponentPropsWithoutRef<'div'> {}
 
-        const BaseTemplate: React.FC<IBaseTemplate> = ({ className, ...divProps }) => {
-        return <div className={`${className}`} {...divProps}></div>;
-        };
+const BaseTemplate: React.FC<IBaseTemplate> = ({ className, ...divProps }) => {
+return <div className={`${className}`} {...divProps}></div>;
+};
 
-        export default BaseTemplate;
-    ```
+export default BaseTemplate;
+```
 
 ### 3. `lib/`
 
 The `lib/` folder contains helper functions, type declarations and mock documents.
 
 - **lib Folder Structure**:
-  ```bash
-  lib/
-    ├── helpers.ts
-    ├── mock.ts
-    └── types.d.ts
-  ```
+
+```bash
+lib/
+├── helpers.ts
+├── mock.ts
+└── types.d.ts
+```
 
 ### 4. `public/`
 
 The `public/` folder contains files that are publicly available.
 
 - **public Folder Structure**:
-  ```bash
-  public/
-    ├── favicon.ico         # The favicon file
-    └── students.json       # The local database
-  ```
+
+```bash
+public/
+├── favicon.ico         # The favicon file
+└── students.json       # The local database
+```
 
 ## Project
 
