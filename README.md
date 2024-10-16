@@ -2,7 +2,13 @@ This is the Test Assment for Miva University using Next.js Page router. The proj
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Then run the development server:
 
 ```bash
 npm run dev
