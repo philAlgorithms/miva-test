@@ -104,7 +104,7 @@ public/
 
 The assesment is [live](https://philip-miva-test.vercel.app) on Vercel Platform.
 
-It should be noted that since this project is deployed on Vercel's serveless functions, the app cannot have permission to write into the file system an hence POST, PUT and DELETE requests will fail when using the project live. These feature however work seamlessly on local ebnvironment and when deployed on dedicated servers.
+It should be noted that since this project is deployed on Vercel's serveless functions, the app cannot have permission to write into the file system an hence POST, PUT and DELETE requests will fail when using the project live. Nevertheless, these feature work seamlessly on local environment and when deployed on dedicated servers.
 
 ## Testing
 
