@@ -17,9 +17,10 @@ The `pages/` folder contains reusable UI pages used throughout the app. Componen
 - **Pages Folder Structure**:
   ```bash
     pages/
-    ├── index.ts              # Home page, accessible at '/', redirects to '/students'
+    ├── index.tsx              # Home page, accessible at '/', redirects to '/students'
+    ├── pages.d.ts             # Type declaration file for page layouts.
     ├── students/
-    │   └── [id].ts           # Dynamic route for student details, accessible at '/studentss/[id]'
+    │   └── [id].tsx           # Dynamic route for student details, accessible at '/studentss/[id]'
     └── api/
         └── students/
             ├── index.ts      # API route for to list students and create new student, accessible at '/api/students'
@@ -30,14 +31,14 @@ The file `page.d.ts` describes a type which extends the default NextPage and use
 
 ##### Code for page.d.ts
 
-    ```ts
-    import { NextPage } from 'next';
-    import { ComponentType, ReactElement, ReactNode } from 'react';
+    ```typescript
+        import { NextPage } from 'next';
+        import { ComponentType, ReactElement, ReactNode } from 'react';
 
-    export type NextPageWithLayout<P = {}> = NextPage<P> & {
-    getLayout?: (_page: ReactElement) => ReactNode;
-    layout?: ComponentType;
-    };
+        export type NextPageWithLayout<P = {}> = NextPage<P> & {
+        getLayout?: (_page: ReactElement) => ReactNode;
+        layout?: ComponentType;
+        };
     ```
 
 ### 2. `components/`
@@ -46,13 +47,13 @@ The `components/` folder contains reusable UI components used throughout the app
 
 - **Components Folder Structure**:
   ```bash
-  components/
-    ├── card
-    ├── form
-    ├── modal
-    ├── navigation
-    ├── section
-    └── templates
+    components/
+        ├── card
+        ├── form
+        ├── modal
+        ├── navigation
+        ├── section
+        └── templates
   ```
 
 #### BaseTemplate Component
@@ -61,14 +62,14 @@ The `BaseTemplate` component provides a base structure that can be extended by o
 
 ##### Code for the template
 
-    ```ts
-    export interface IBaseTemplate extends React.ComponentPropsWithoutRef<'div'> {}
+    ```typescript
+        export interface IBaseTemplate extends React.ComponentPropsWithoutRef<'div'> {}
 
-    const BaseTemplate: React.FC<IBaseTemplate> = ({ className, ...divProps }) => {
-    return <div className={`${className}`} {...divProps}></div>;
-    };
+        const BaseTemplate: React.FC<IBaseTemplate> = ({ className, ...divProps }) => {
+        return <div className={`${className}`} {...divProps}></div>;
+        };
 
-    export default BaseTemplate;
+        export default BaseTemplate;
     ```
 
 ### 3. `lib/`
