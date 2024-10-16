@@ -67,7 +67,7 @@ The `BaseTemplate` component provides a base structure that can be extended by o
 export interface IBaseTemplate extends React.ComponentPropsWithoutRef<'div'> {}
 
 const BaseTemplate: React.FC<IBaseTemplate> = ({ className, ...divProps }) => {
-return <div className={`${className}`} {...divProps}></div>;
+  return <div className={`${className}`} {...divProps}></div>;
 };
 
 export default BaseTemplate;
