@@ -18,7 +18,7 @@ The `pages/` folder contains reusable UI pages used throughout the app. Componen
   ```bash
     pages/
     ├── index.tsx              # Home page, accessible at '/', redirects to '/students'
-    ├── pages.d.ts             # Type declaration file for page layouts.
+    ├── page.d.ts             # Type declaration file for page layouts.
     ├── students/
     │   └── [id].tsx           # Dynamic route for student details, accessible at '/studentss/[id]'
     └── api/
